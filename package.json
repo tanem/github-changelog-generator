@@ -1,0 +1,76 @@
+{
+  "name": "@tanem/github-changelog-generator",
+  "version": "0.0.0",
+  "description": "Generates a changelog using GitHub tags and pull requests.",
+  "author": "Tane Morgan (https://github.com/tanem)",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "bin": {
+    "github-changelog-generator": "./dist/bin/github-changelog-generator.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/tanem/github-changelog-generator",
+  "bugs": "https://github.com/tanem/github-changelog-generator/issues",
+  "repository": "github:tanem/github-changelog-generator",
+  "keywords": [
+    "changelog",
+    "changelog-generator",
+    "generator",
+    "github",
+    "javascript",
+    "markdown",
+    "typescript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^16.28.2",
+    "date-fns": "^1.30.1",
+    "git-remote-origin-url": "^3.0.0",
+    "minimist": "1.2.0",
+    "parse-github-url": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/lolex": "^3.1.1",
+    "@types/minimist": "1.2.0",
+    "@types/nock": "^10.0.3",
+    "@types/node": "^12.0.12",
+    "@types/parse-github-url": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "1.12.0",
+    "@typescript-eslint/parser": "1.12.0",
+    "del-cli": "^2.0.0",
+    "eslint": "6.0.1",
+    "eslint-config-prettier": "6.0.0",
+    "jest": "^24.8.0",
+    "lolex": "^4.1.0",
+    "nock": "^10.0.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "shelljs": "^0.8.3",
+    "shelljs-plugin-authors": "^2.0.10",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  },
+  "scripts": {
+    "authors": "shelljs-authors > AUTHORS",
+    "build": "run-s clean compile",
+    "changelog": "ts-node bin/github-changelog-generator -f v$npm_package_version > CHANGELOG.md",
+    "check:format": "prettier --list-different \"**/*.{js,ts}\"",
+    "check:types": "tsc --noEmit",
+    "clean": "run-p clean:*",
+    "clean:coverage": "del coverage",
+    "clean:dist": "del dist",
+    "compile": "tsc -p tsconfig.base.json",
+    "format": "prettier --write \"**/*.{js,ts}\"",
+    "lint": "eslint .",
+    "postversion": "git push && git push --tags && npm publish --access=public",
+    "release": "npm version -m 'Release v%s'",
+    "test": "run-s check:* lint build test:*",
+    "test:cjs": "jest --config ./scripts/jest/config.cjs.js",
+    "test:src": "jest --config ./scripts/jest/config.src.js",
+    "version": "run-s test changelog authors && git add ."
+  }
+}

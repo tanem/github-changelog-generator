@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["es2017"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    // "typeRoots": ["./types", "./node_modules/@types"],
+    "paths": {
+      "*": ["./types/*"]
+    }
+    // "paths": { "parse-github-repo-url": ["types/parse-github-repo-url"] }
+    // "typeRoots": ["./node_modules/@types", "./types"],
+    // "types": ["parse-github-repo-url"]
+  },
+  "include": ["bin", "src"],
+  "exclude": ["node_modules", "dist"]
+}

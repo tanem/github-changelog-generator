@@ -441,3 +441,11 @@ test('can infer repo info', async () => {
 
   expect(result).toMatchSnapshot()
 })
+
+test('throws when unable to get repo info', async () => {
+  fs.writeFileSync(gitConfigPath, `[remote "origin"]\n  url = invalid`, 'utf-8')
+
+  await expect(generateChangelog()).rejects.toThrow(
+    'Unable to parse GitHub url'
+  )
+})

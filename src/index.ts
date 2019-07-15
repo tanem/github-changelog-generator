@@ -6,12 +6,15 @@ import parseGithubUrl from 'parse-github-url'
 const getRepoInfo = async () => {
   const url = await gitRemoteOriginUrl()
   const parsed = parseGithubUrl(url)
+
+  /* istanbul ignore else */
   if (parsed && parsed.owner && parsed.name) {
     return {
       owner: parsed.owner,
       repo: parsed.name
     }
   }
+
   throw new Error('Unable to parse GitHub url')
 }
 
@@ -27,10 +30,12 @@ export const generateChangelog = async ({
   if (!owner || !repo) {
     const repoInfo = await getRepoInfo()
 
+    /* istanbul ignore else */
     if (!owner) {
       owner = repoInfo.owner
     }
 
+    /* istanbul ignore else */
     if (!repo) {
       repo = repoInfo.repo
     }

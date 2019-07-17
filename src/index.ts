@@ -1,7 +1,14 @@
+// @ts-ignore
+import retryPlugin from '@octokit/plugin-retry';
+// @ts-ignore
+import throttlingPlugin from '@octokit/plugin-throttling';
 import Octokit from '@octokit/rest';
 import { compareAsc, format, isBefore } from 'date-fns';
 import gitRemoteOriginUrl from 'git-remote-origin-url';
 import parseGithubUrl from 'parse-github-url';
+
+Octokit.plugin(retryPlugin);
+Octokit.plugin(throttlingPlugin);
 
 const getRepoInfo = async () => {
   const url = await gitRemoteOriginUrl();
@@ -42,7 +49,26 @@ export const generateChangelog = async ({
   }
 
   const octokit = new Octokit({
-    auth: process.env.CHANGELOG_GITHUB_TOKEN
+    auth: process.env.CHANGELOG_GITHUB_TOKEN,
+    throttle: {
+      // @ts-ignore
+      onRateLimit: (retryAfter, options) => {
+        console.warn(
+          `Request quota exhausted for request ${options.method} ${options.url}`
+        );
+
+        if (options.request.retryCount === 0) {
+          console.log(`Retrying after ${retryAfter} seconds!`);
+          return true;
+        }
+      },
+      // @ts-ignore
+      onAbuseLimit: (retryAfter, options) => {
+        console.warn(
+          `Abuse detected for request ${options.method} ${options.url}`
+        );
+      }
+    }
   });
 
   const baseEndpointOptions = {

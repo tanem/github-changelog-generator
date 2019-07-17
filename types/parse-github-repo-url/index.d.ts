@@ -3,6 +3,6 @@
 // Definitions by: Tane Morgan <https://github.com/tanem>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare function parseGithubRepoUrl(url: string): string[]
+declare function parseGithubRepoUrl(url: string): string[];
 
-export = parseGithubRepoUrl
+export = parseGithubRepoUrl;

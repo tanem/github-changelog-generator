@@ -1,6 +1,4 @@
-// @ts-ignore
 import retryPlugin from '@octokit/plugin-retry';
-// @ts-ignore
 import throttlingPlugin from '@octokit/plugin-throttling';
 import Octokit from '@octokit/rest';
 import { compareAsc, format, isBefore } from 'date-fns';

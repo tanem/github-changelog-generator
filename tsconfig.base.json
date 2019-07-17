@@ -15,15 +15,15 @@
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "target": "es2017"
     // "typeRoots": ["./types", "./node_modules/@types"],
-    "paths": {
-      "*": ["./types/*"]
-    }
+    // "paths": {
+    //   "*": ["./types/*"]
+    // }
     // "paths": { "parse-github-repo-url": ["types/parse-github-repo-url"] }
     // "typeRoots": ["./node_modules/@types", "./types"],
     // "types": ["parse-github-repo-url"]
   },
-  "include": ["bin", "src"],
+  "include": ["bin", "src", "types"],
   "exclude": ["node_modules", "dist"]
 }

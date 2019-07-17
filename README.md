@@ -67,6 +67,12 @@ import { generateChangelog } from '../src';
 $ npm install @tanem/github-changelog-generator --save-dev
 ```
 
+You'll also need to generate a new [GitHub personal access token](https://github.com/settings/tokens), then set an environment variable by running the following command at the prompt or by adding it to your shell profile:
+
+```sh
+export CHANGELOG_GITHUB_TOKEN=<your_github_personal_access_token>
+```
+
 ## License
 
 MIT

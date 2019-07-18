@@ -1,6 +1,14 @@
 # Changelog
 
-## [v0.0.1](https://github.com/tanem/github-changelog-generator/tree/v0.0.1)(2019-07-18)
+## [v0.0.2](https://github.com/tanem/github-changelog-generator/tree/v0.0.2) (2019-07-18)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v0.0.1...v0.0.2)
+
+**Merged pull requests:**
+
+- Fix output [#11](https://github.com/tanem/github-changelog-generator/pull/11) ([tanem](https://github.com/tanem))
+- Add .mailmap file [#10](https://github.com/tanem/github-changelog-generator/pull/10) ([tanem](https://github.com/tanem))
+
+## [v0.0.1](https://github.com/tanem/github-changelog-generator/tree/v0.0.1) (2019-07-18)
 
 **Merged pull requests:**
 

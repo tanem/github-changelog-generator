@@ -54,13 +54,12 @@
     "shelljs": "0.8.3",
     "shelljs-plugin-authors": "2.0.11",
     "ts-jest": "24.0.2",
-    "ts-node": "8.3.0",
     "typescript": "3.5.3"
   },
   "scripts": {
     "authors": "shelljs-authors > AUTHORS",
     "build": "run-s clean compile",
-    "changelog": "ts-node bin/github-changelog-generator -f v$npm_package_version > CHANGELOG.md",
+    "changelog": "node dist/bin/github-changelog-generator.js -f v$npm_package_version > CHANGELOG.md",
     "check:format": "prettier --list-different \"**/*.{js,ts}\"",
     "check:types": "tsc --noEmit",
     "clean": "run-p clean:*",

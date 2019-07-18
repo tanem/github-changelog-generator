@@ -163,7 +163,7 @@ export const generateChangelog = async ({
       .map((tag, index, array) => {
         let result = `\n## [${
           tag.name
-        }](https://github.com/${owner}/${repo}/tree/${tag.name})(${format(
+        }](https://github.com/${owner}/${repo}/tree/${tag.name}) (${format(
           tag.date,
           'YYYY-MM-DD'
         )})\n`;

@@ -63,6 +63,8 @@ import { generateChangelog } from '../src';
 
 ## Installation
 
+> ⚠️This library requires Node.js 8 or greater.
+
 ```
 $ npm install @tanem/github-changelog-generator --save-dev
 ```

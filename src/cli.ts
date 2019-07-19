@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import minimist from 'minimist';
-import { version } from '../package.json';
-import { generateChangelog } from '../src';
+import { generateChangelog } from '.';
+
+// Using `require` to work around the issue described here:
+// https://github.com/Microsoft/TypeScript/issues/24744.
+const { version } = require('../package.json');
+
 (async () => {
   try {
     const argv = minimist(process.argv.slice(2), {
@@ -17,7 +21,7 @@ import { generateChangelog } from '../src';
     });
 
     if (argv.help) {
-      const usage = fs.readFileSync(__dirname + '/usage.txt');
+      const usage = await fs.readFile(__dirname + '/usage.txt');
       process.stdout.write(usage);
       process.exit(0);
     }

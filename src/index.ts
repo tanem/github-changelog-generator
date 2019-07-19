@@ -155,8 +155,6 @@ export const generateChangelog = async ({
 
   cleanedTags.reverse();
 
-  // TODO: Just return array here so it's easier to print to console?
-  // or does that even matter
   return (
     '# Changelog\n' +
     cleanedTags

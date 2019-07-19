@@ -2,8 +2,12 @@
 
 import fs from 'fs';
 import minimist from 'minimist';
-import { version } from '../package.json';
-import { generateChangelog } from '../src';
+import { generateChangelog } from '.';
+
+// Using `require` to work around the issue described here:
+// https://github.com/Microsoft/TypeScript/issues/24744.
+const { version } = require('../package.json');
+
 (async () => {
   try {
     const argv = minimist(process.argv.slice(2), {

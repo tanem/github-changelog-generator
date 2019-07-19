@@ -18,13 +18,17 @@ $ github-changelog-generator > CHANGELOG.md
 ### API
 
 ```ts
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { generateChangelog } from '../src';
 
 (async () => {
-  const changelog = await generateChangelog();
-  await fs.writeFile(path.join(__dirname, 'CHANGELOG.md'), changelog, 'utf-8');
+  try {
+    const changelog = await generateChangelog();
+    fs.writeFileSync(path.join(__dirname, 'CHANGELOG.md'), changelog, 'utf-8');
+  } catch (error) {
+    console.error(error);
+  }
 })();
 ```
 
@@ -47,23 +51,25 @@ $ github-changelog-generator -f v2.0.0 -o tanem -r react-svg > CHANGELOG.md
 ### API
 
 ```ts
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { generateChangelog } from '../src';
 
 (async () => {
-  const changelog = await generateChangelog({
-    futureRelease: 'v2.0.0',
-    owner: 'tanem',
-    repo: 'react-svg'
-  });
-  await fs.writeFile(path.join(__dirname, 'CHANGELOG.md'), changelog, 'utf-8');
+  try {
+    const changelog = await generateChangelog({
+      futureRelease: 'v2.0.0',
+      owner: 'tanem',
+      repo: 'react-svg'
+    });
+    fs.writeFileSync(path.join(__dirname, 'CHANGELOG.md'), changelog, 'utf-8');
+  } catch (error) {
+    console.error(error);
+  }
 })();
 ```
 
 ## Installation
-
-> ⚠️This library requires Node.js 8 or greater.
 
 ```
 $ npm install @tanem/github-changelog-generator --save-dev

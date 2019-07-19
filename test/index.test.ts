@@ -1,5 +1,5 @@
 import { subDays, subHours } from 'date-fns';
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import lolex, { InstalledClock } from 'lolex';
 import nock from 'nock';
 import path from 'path';
@@ -19,9 +19,9 @@ const gitConfigPath = path.join(tmpDirPath, 'config');
 let clock: InstalledClock;
 let now: string;
 
-beforeEach(async () => {
-  await fs.mkdir(tmpDirPath);
-  await fs.writeFile(
+beforeEach(() => {
+  fs.mkdirSync(tmpDirPath);
+  fs.writeFileSync(
     gitConfigPath,
     `[remote "origin"]\n  url = git@github.com:${owner}/${repo}.git`,
     'utf-8'
@@ -32,9 +32,9 @@ beforeEach(async () => {
   now = new Date().toISOString();
 });
 
-afterEach(async () => {
-  await fs.unlink(gitConfigPath);
-  await fs.rmdir(tmpDirPath);
+afterEach(() => {
+  fs.unlinkSync(gitConfigPath);
+  fs.rmdirSync(tmpDirPath);
   process.env.CHANGELOG_GITHUB_TOKEN = originalChangelogGithubToken;
   process.env.GIT_DIR = originalGitDir;
   clock.uninstall();
@@ -443,7 +443,7 @@ test('can infer repo info', async () => {
 });
 
 test('throws when unable to get repo info', async () => {
-  await fs.writeFile(
+  fs.writeFileSync(
     gitConfigPath,
     `[remote "origin"]\n  url = invalid`,
     'utf-8'

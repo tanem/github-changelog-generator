@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import minimist from 'minimist';
 import { generateChangelog } from '.';
 
@@ -21,7 +21,7 @@ const { version } = require('../package.json');
     });
 
     if (argv.help) {
-      const usage = await fs.readFile(__dirname + '/usage.txt');
+      const usage = fs.readFileSync(__dirname + '/usage.txt');
       process.stdout.write(usage);
       process.exit(0);
     }

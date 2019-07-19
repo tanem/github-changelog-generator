@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.0.0](https://github.com/tanem/github-changelog-generator/tree/v1.0.0) (2019-07-19)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v0.0.2...v1.0.0)
+
+**Merged pull requests:**
+
+- Update dependency @octokit/rest to ^16.28.5 [#16](https://github.com/tanem/github-changelog-generator/pull/16) ([renovate[bot]](https://github.com/apps/renovate))
+- Simplify project structure [#14](https://github.com/tanem/github-changelog-generator/pull/14) ([tanem](https://github.com/tanem))
+- Make usage.txt available [#13](https://github.com/tanem/github-changelog-generator/pull/13) ([tanem](https://github.com/tanem))
+- Add requirement for Node.js 8 or greater [#12](https://github.com/tanem/github-changelog-generator/pull/12) ([tanem](https://github.com/tanem))
+
 ## [v0.0.2](https://github.com/tanem/github-changelog-generator/tree/v0.0.2) (2019-07-18)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v0.0.1...v0.0.2)
 

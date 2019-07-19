@@ -1,6 +1,6 @@
 {
   "name": "@tanem/github-changelog-generator",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Generates a changelog using GitHub tags and pull requests.",
   "author": "Tane Morgan (https://github.com/tanem)",
   "main": "dist/index.js",

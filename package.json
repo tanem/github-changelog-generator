@@ -60,7 +60,7 @@
   "scripts": {
     "authors": "shelljs-authors > AUTHORS",
     "build": "run-s clean compile",
-    "changelog": "node dist//github-changelog-generator.js -f v$npm_package_version > CHANGELOG.md",
+    "changelog": "node dist/cli.js -f v$npm_package_version > CHANGELOG.md",
     "check:format": "prettier --list-different \"**/*.{js,ts}\"",
     "check:types": "tsc --noEmit",
     "clean": "run-p clean:*",

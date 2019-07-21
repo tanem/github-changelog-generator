@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.1](https://github.com/tanem/github-changelog-generator/tree/v1.0.1) (2019-07-21)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.0...v1.0.1)
+
+**Merged pull requests:**
+
+- Remove octokit plugins [#18](https://github.com/tanem/github-changelog-generator/pull/18) ([tanem](https://github.com/tanem))
+- Update dependency eslint to v6.1.0 [#17](https://github.com/tanem/github-changelog-generator/pull/17) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v1.0.0](https://github.com/tanem/github-changelog-generator/tree/v1.0.0) (2019-07-19)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v0.0.2...v1.0.0)
 

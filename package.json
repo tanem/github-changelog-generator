@@ -45,7 +45,7 @@
     "codecov": "3.5.0",
     "cp-cli": "2.0.0",
     "del-cli": "2.0.0",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-prettier": "6.0.0",
     "jest": "24.8.0",
     "lolex": "4.1.0",

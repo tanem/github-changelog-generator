@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.2](https://github.com/tanem/github-changelog-generator/tree/v1.0.2) (2019-07-23)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.1...v1.0.2)
+
+**Merged pull requests:**
+
+- Fix type issues [#20](https://github.com/tanem/github-changelog-generator/pull/20) ([tanem](https://github.com/tanem))
+- Update dev dependencies to v1.13.0 [#19](https://github.com/tanem/github-changelog-generator/pull/19) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v1.0.1](https://github.com/tanem/github-changelog-generator/tree/v1.0.1) (2019-07-21)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.0...v1.0.1)
 

@@ -51,7 +51,11 @@ export const generateChangelog = async ({
     repo
   };
 
-  const [rawPulls, rawTags, rawCommits] = await Promise.all([
+  const [rawPulls, rawTags, rawCommits]: [
+    Octokit.PullsListResponseItem[],
+    Octokit.ReposListTagsResponseItem[],
+    Octokit.ReposListCommitsResponseItem[]
+  ] = await Promise.all([
     octokit.paginate(
       octokit.pulls.list.endpoint.merge({
         ...baseEndpointOptions,
@@ -79,7 +83,15 @@ export const generateChangelog = async ({
 
   const pendingCleanedTags = [];
 
-  const getCleanTagData = async (tag: Octokit.ReposListTagsResponseItem) => {
+  const getCleanTagData = async (
+    tag: Octokit.ReposListTagsResponseItem,
+    owner: string,
+    repo: string
+  ): Promise<{
+    date: string;
+    name: string;
+    pulls: typeof cleanedPulls;
+  }> => {
     const existingTagCommit = rawCommits.find(
       commit => commit.sha === tag.commit.sha
     );
@@ -92,7 +104,6 @@ export const generateChangelog = async ({
       };
     }
 
-    // @ts-ignore
     const { data: latestTagCommit } = await octokit.git.getCommit({
       commit_sha: tag.commit.sha, // eslint-disable-line @typescript-eslint/camelcase
       owner,
@@ -107,7 +118,7 @@ export const generateChangelog = async ({
   };
 
   for (const tag of rawTags) {
-    pendingCleanedTags.push(getCleanTagData(tag));
+    pendingCleanedTags.push(getCleanTagData(tag, owner, repo));
   }
 
   const cleanedTags = await Promise.all(pendingCleanedTags);
@@ -124,7 +135,6 @@ export const generateChangelog = async ({
     const tag = cleanedTags.find(t => isBefore(p.mergedAt, t.date));
     /* istanbul ignore else */
     if (tag) {
-      // @ts-ignore
       tag.pulls.unshift(p);
     }
   });
@@ -150,7 +160,6 @@ export const generateChangelog = async ({
           if (index === 0) {
             result += `\n**Merged pull requests:**\n\n`;
           }
-          // @ts-ignore
           result += `- ${pull.title} [\#${pull.number}](https://github.com/${owner}/${repo}/pull/${pull.number}) ([${pull.userLogin}](${pull.userHtmlUrl}))\n`;
         });
 

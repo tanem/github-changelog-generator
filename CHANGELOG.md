@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.4](https://github.com/tanem/github-changelog-generator/tree/v1.0.4) (2019-07-28)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.3...v1.0.4)
+
+**Merged pull requests:**
+
+- Update API docs [#25](https://github.com/tanem/github-changelog-generator/pull/25) ([tanem](https://github.com/tanem))
+- Update docs [#24](https://github.com/tanem/github-changelog-generator/pull/24) ([tanem](https://github.com/tanem))
+
 ## [v1.0.3](https://github.com/tanem/github-changelog-generator/tree/v1.0.3) (2019-07-27)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.2...v1.0.3)
 

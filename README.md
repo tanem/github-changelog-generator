@@ -7,6 +7,10 @@
 
 > Generates a changelog using GitHub tags and pull requests.
 
+## Background
+
+For a long time I used [GitHub Changelog Generator](https://github.com/github-changelog-generator/github-changelog-generator) to generate changelogs for my personal projects, which worked well until I started hitting numerous errors when running against larger projects. That, coupled with the fact that I was only using a small subset of the API, prompted me to create this module.
+
 ## Basic Usage
 
 ### CLI

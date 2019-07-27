@@ -1,25 +1,18 @@
 Usage: github-changelog-generator [options]
 
-Generates a changelog using GitHub tags and pull requests then writes it to
-stdout.
+Generates a changelog using GitHub tags and pull requests.
 
 Options:
-
   -f, --future-release <tag>  Tag to use for PRs merged since the last published
                               tag. If unspecified, those PRs will be excluded.
-
   -o, --owner <owner>         Repo owner. If unspecified, the value will be
                               resolved from the local git config.
-
   -r, --repo <repo>           Repo name. If unspecified, the value will be
                               resolved from the local git config.
-
   -v, --version               Output the version number.
-
   -h, --help                  Output usage information.
 
 Examples:
-  
   $ github-changelog-generator -f v1.0.0
   $ github-changelog-generator -o tanem -r react-svg
   $ github-changelog-generator -f v2.0.0 -o tanem -r react-svg

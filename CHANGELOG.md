@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.3](https://github.com/tanem/github-changelog-generator/tree/v1.0.3) (2019-07-27)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.2...v1.0.3)
+
+**Merged pull requests:**
+
+- Update dependency @octokit/rest to ^16.28.7 [#21](https://github.com/tanem/github-changelog-generator/pull/21) ([renovate[bot]](https://github.com/apps/renovate))
+- Use @tanem/authors [#23](https://github.com/tanem/github-changelog-generator/pull/23) ([tanem](https://github.com/tanem))
+
 ## [v1.0.2](https://github.com/tanem/github-changelog-generator/tree/v1.0.2) (2019-07-23)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.1...v1.0.2)
 

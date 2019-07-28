@@ -32,7 +32,6 @@
     "parse-github-url": "^1.0.2"
   },
   "devDependencies": {
-    "@tanem/authors": "1.0.0",
     "@types/jest": "24.0.15",
     "@types/lolex": "3.1.1",
     "@types/minimist": "1.2.0",
@@ -51,13 +50,15 @@
     "nock": "10.0.6",
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
+    "tanem-scripts": "1.0.2",
     "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   },
   "scripts": {
-    "authors": "authors > AUTHORS",
+    "audit": "tanem-scripts audit",
+    "authors": "tanem-scripts authors",
     "build": "run-s clean compile",
-    "changelog": "node dist/cli.js -f v$npm_package_version > CHANGELOG.md",
+    "changelog": "tanem-scripts changelog",
     "check:format": "prettier --list-different \"**/*.{js,ts}\"",
     "check:types": "tsc --noEmit",
     "clean": "run-p clean:*",

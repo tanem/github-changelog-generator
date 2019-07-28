@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/tanem/github-changelog-generator/tree/1.0.5) (2019-07-29)
+[Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.4...1.0.5)
+
+**Merged pull requests:**
+
+- Use tanem-scripts [#27](https://github.com/tanem/github-changelog-generator/pull/27) ([tanem](https://github.com/tanem))
+
 ## [v1.0.4](https://github.com/tanem/github-changelog-generator/tree/v1.0.4) (2019-07-28)
 [Full Changelog](https://github.com/tanem/github-changelog-generator/compare/v1.0.3...v1.0.4)
 

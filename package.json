@@ -32,7 +32,7 @@
     "parse-github-url": "^1.0.2"
   },
   "devDependencies": {
-    "@tanem/authors": "1.0.0",
+    "@tanem/authors": "1.0.1",
     "@types/jest": "24.0.15",
     "@types/lolex": "3.1.1",
     "@types/minimist": "1.2.0",

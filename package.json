@@ -32,11 +32,11 @@
     "parse-github-url": "^1.0.2"
   },
   "devDependencies": {
-    "@types/jest": "24.0.15",
+    "@types/jest": "24.0.17",
     "@types/lolex": "3.1.1",
     "@types/minimist": "1.2.0",
     "@types/nock": "10.0.3",
-    "@types/node": "12.6.8",
+    "@types/node": "12.7.1",
     "@types/parse-github-url": "1.0.0",
     "@typescript-eslint/eslint-plugin": "1.13.0",
     "@typescript-eslint/parser": "1.13.0",
@@ -46,11 +46,11 @@
     "eslint": "6.1.0",
     "eslint-config-prettier": "6.0.0",
     "jest": "24.8.0",
-    "lolex": "4.1.0",
+    "lolex": "4.2.0",
     "nock": "10.0.6",
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
-    "tanem-scripts": "1.0.2",
+    "tanem-scripts": "1.0.3",
     "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   },
